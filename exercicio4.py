@@ -2,7 +2,7 @@
 nome = "Carlos"
 idade = 18
 curso = "Programador"
-nota = 9,5
+nota = 9.5
 aprovacao = True
 
 print("Nome: ", nome)
