@@ -1,15 +1,31 @@
-nome = input print ("Qual é o seu nome de usuário?")
-problema = input print ("Qual é o tipo de problema?")
-tempo = float (input (print "Quanto tempo faz em que o problema foi relatado?"))
+nome = input ("Nome de usuário: ")
 
-if problema = "indisponibilidade total"
-prioridade = "Crítica"
 
-elif problema = "Sistema funcionando com lentidão ou erros"
-prioridade = "Alta"
+print("Selecione o número que corresponde ao tipo de problema na lista abaixo:")
+print("1 - Indisponibilidade total do sistema;")
+print("2 - Sistema funcionando, mas com lentidão ou erros;")
+print("3 - Problema que não impede o trabalho;" )
+print("4 - Outros problemas.")
 
-elif problema = "não impede o trabalho"
-prioridade = "média"
+problema = input ("Qual é o tipo de problema? ")
 
-else 
-prioridade = "Baixa"
+if problema == "1":
+ prioridade = "Crítica"
+
+elif problema == "2":
+ prioridade = "Alta"
+
+elif problema == "3":
+ prioridade = "Média"
+
+elif problema == "4":
+ prioridade = "Baixa"
+
+else : "Ops! Não conseguimos indentificar este problema, por favor selecione um dos listados por número."
+
+tempo = int (input ("Há quantos minutos o problema foi relatado? "))
+
+print ("Usuário:" , nome)
+print ("Tipo de Problema:", problema)
+print ("Tempo do Problema:", tempo, "minutos")
+print ("Prioridade:", prioridade)
