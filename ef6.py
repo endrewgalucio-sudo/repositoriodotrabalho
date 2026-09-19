@@ -5,10 +5,10 @@ senha = (input("Digite a senha correta: "))
 while True:
    
     if senha == "1234":
-    
-      print ("Senha Correta! Acesso Liberado.")
+     print ("Senha Correta! Acesso Liberado.")
+     break
     else:
      print ("Senha Incorreta!")
 
-    senha = input ("Tente novamente:")
-    break
+     senha = input ("Tente novamente:")
+    
