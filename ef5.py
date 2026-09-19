@@ -2,9 +2,9 @@
 
 idade = int(input("Digite a sua idade: "))
 
-while idade < 1 or idade > 120:
+while idade < 2 or idade > 120:
         
-    if idade < 1:
+    if idade < 2:
         print("Valor inválido! Ninguém pode ter uma idade negativa, nasceu ontem por acaso? ")
     elif idade > 120:
         print("Valor inválido! Essa idade parece alta demais para um ser humano.")
