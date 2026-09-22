@@ -10,5 +10,5 @@ while True:
     else:
      print ("Senha Incorreta!")
 
-     senha = input ("Tente novamente:")
+     senha = input ("Tente novamente: ")
     
