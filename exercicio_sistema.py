@@ -21,7 +21,31 @@ for i in range(repeticoes):
     opcao = input("Escolha uma opção: ")
 
     if opcao == "1":
-     while opcao != "6":
+
+     biblioteca = []
+     quantidade_livros = int(input("Quantos livros deseja cadastrar? "))
+     for i in range(quantidade_livros):
+                     
+                                 print()
+                                 print("LIVRO", i + 1)
+            
+     def cadastrar_livro():
+                   codigo = int(input("Código: "))
+                   titulo = input("Título: ")
+                   autor = input("Autor: ")
+                   ano = int(input("Ano: "))
+                   biblioteca.append([codigo, titulo, autor, ano])
+                   print (biblioteca)
+                   if codigo == "":
+                                  print("Código do livro não pode ficar vazio.")
+                          
+                                  if titulo == "":
+                                      print("Título do livro não pode ficar vazio.")
+    
+     
+
+    
+     while True:
         print()
         print ("\n========== SISTEMA DE BIBLIOTECA ==========")
         print ("1 - Cadastrar livro") 
@@ -30,35 +54,16 @@ for i in range(repeticoes):
         print ("4 - Alterar lvro")
         print ("5 - Excluir livro")
         print ("6 - Sair")
+        opcao = input("Escolha: ")
+      
+        if opcao == "1":
+           cadastrar_livro()
+        elif opcao == "6":
+             print ("Fechando o sistema...")
+             break
+        else: print ("Opção Inválida!")
         break
-     if opcao == "1":
         
-        quantidade_livros = int(input("Quantos livros deseja cadastrar? "))
-        for i in range(quantidade_livros):
-                
-                            print()
-                            print("LIVRO", i + 1)
-        biblioteca = []
-
-        codigo = int(input("Código: "))
-        titulo = input("Título: ")
-        autor = input("Autor: ")
-        ano = int(input("Ano: "))
-                  
-        livro = [codigo, titulo, autor, ano]
-        biblioteca.append(livro)         
-
-        print("Livro Cadastrado!")
-        print(f"\n", biblioteca)
-        
-       
-            
-
-        if codigo == "":
-                print("Código do livro não pode ficar vazio.")
-        
-                if titulo == "":
-                    print("Título do livro não pode ficar vazio.")
                
 
                    
