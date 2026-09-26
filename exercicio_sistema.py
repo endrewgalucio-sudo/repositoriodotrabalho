@@ -1,5 +1,5 @@
 # Exercício Sistema de Biblioteca
-quantidade = int(input ("Quantos alunos deseja cadastrar? "))
+
 print("====================================")
 print("       SISTEMA PARA BIBLIOTECA")
 print("====================================")
@@ -23,46 +23,59 @@ for i in range(repeticoes):
     if opcao == "1":
 
      biblioteca = []
-     quantidade_livros = int(input("Quantos livros deseja cadastrar? "))
-     for i in range(quantidade_livros):
-                     
-                                 print()
-                                 print("LIVRO", i + 1)
+     lista = []
             
      def cadastrar_livro():
-                   codigo = int(input("Código: "))
-                   titulo = input("Título: ")
-                   autor = input("Autor: ")
-                   ano = int(input("Ano: "))
-                   biblioteca.append([codigo, titulo, autor, ano])
-                   print (biblioteca)
-                   if codigo == "":
+                 
+         quantidade_livros = int(input("Quantos livros deseja cadastrar? "))
+         for i in range(quantidade_livros):
+                                
+          print( )
+          print("LIVRO", i + 1)      
+          codigo = int(input("Código: "))
+          titulo = input("Título: ")
+          autor = input("Autor: ")
+          ano = int(input("Ano: "))
+          biblioteca.append([codigo, titulo, autor, ano])
+          lista.append([codigo, titulo, autor, ano])
+          print (f"O Livro: '{biblioteca}' foi cadastrado com sucesso!")
+
+          if codigo == "":
                                   print("Código do livro não pode ficar vazio.")
                           
                                   if titulo == "":
                                       print("Título do livro não pode ficar vazio.")
     
-     
-
-    
-     while True:
-        print()
-        print ("\n========== SISTEMA DE BIBLIOTECA ==========")
-        print ("1 - Cadastrar livro") 
-        print ("2 - Listar livros")
-        print ("3 - Pesquisar livro")
-        print ("4 - Alterar lvro")
-        print ("5 - Excluir livro")
-        print ("6 - Sair")
-        opcao = input("Escolha: ")
+     def listar_livros():
       
-        if opcao == "1":
+  
+      if len (lista) == 0:
+          print ("Nenhum livro na lista até o momento.")
+          print ("Selecione novamente;")
+      else: 
+          for livro in lista: 
+           print ("===== Lista de Livros =====")
+           print (f"- {livro}")
+     while True:
+          print()
+          print ("\n========== SISTEMA DE BIBLIOTECA ==========")
+          print ("1 - Cadastrar livro") 
+          print ("2 - Listar livros")
+          print ("3 - Pesquisar livro")
+          print ("4 - Alterar lvro")
+          print ("5 - Excluir livro")
+          print ("6 - Sair")
+          opcao = input("Escolha: ")
+      
+          if opcao == "1":
            cadastrar_livro()
-        elif opcao == "6":
+          elif opcao == "2":
+            listar_livros() 
+          elif opcao == "6":
              print ("Fechando o sistema...")
              break
-        else: print ("Opção Inválida!")
-        break
+          else: print ("Opção Inválida!")
+          
         
                
 
