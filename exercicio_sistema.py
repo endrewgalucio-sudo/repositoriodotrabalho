@@ -31,7 +31,11 @@ for i in range(repeticoes):
             for i in range(quantidade_livros):
                 print()
                 print("LIVRO", i + 1)      
-                codigo = int(input("Código: "))
+                codigo = input("Código: ")
+                
+                if codigo == "":
+                    print("Código do livro não pode ficar vazio.")
+                    continue
                     
                 titulo = input("Título: ")
                 if titulo == "":
@@ -39,14 +43,12 @@ for i in range(repeticoes):
                     continue
                     
                 autor = input("Autor: ")
-                if autor == "":
-                    print ("O autor do livro não pode ficar vazio.")
                 ano = int(input("Ano: "))
                 
                 dados_livro = [codigo, titulo, autor, ano]
                 biblioteca.append(dados_livro)
                 lista.append(dados_livro)
-                print(f"O Livro intitulado: '{titulo}' foi cadastrado com sucesso!")
+                print(f"O Livro: '{titulo}' foi cadastrado com sucesso!")
 
         def listar_livros():
             if len(lista) == 0:
@@ -55,7 +57,7 @@ for i in range(repeticoes):
             else: 
                 print("\n===== Lista de Livros =====") 
                 for livro in lista: 
-                    print(f"- Título: {livro[1]} | Autor: {livro[2]} | Código: {livro[0]} | Ano: {livro[3]}")
+                    print(f"- Título: {livro} | Autor: {livro} | Código: {livro} | Ano: {livro}")
         
         def alterar_livro():
             print("\n--- ALTERAR LIVRO ---")
@@ -65,18 +67,15 @@ for i in range(repeticoes):
                 
             livro_para_alterar = input("Digite o nome exato do título do livro que deseja alterar: ")
             
-            achou = False
             for livro in lista:
-                if livro[1] == livro_para_alterar:
-                    print(f"Livro encontrado! Nome atual: {livro[1]}")
+                if livro == livro_para_alterar:
+                    print(f"Livro encontrado! Nome atual: {livro}")
                     novo_titulo = input("Digite o novo título: ")
                     if novo_titulo != "":
-                        livro[1] = novo_titulo
+                        livro = novo_titulo
                         print("Título alterado com sucesso!")
-                    achou = True
                     break
-            
-            if not achou:
+            else:
                 print("Esse livro não foi encontrado na lista.")
 
         def excluir_livro():
@@ -87,17 +86,15 @@ for i in range(repeticoes):
                 
             livro_para_excluir = input("Digite o nome exato do título do livro que deseja excluir: ")
             
-            achou = False
             for livro in lista:
-                if livro[1] == livro_para_excluir:
+                if livro == livro_para_excluir:
                     lista.remove(livro)
                     if livro in biblioteca:
                         biblioteca.remove(livro)
                     print(f"Livro '{livro_para_excluir}' removido com sucesso!")
-                    achou = True
                     break
-            
-            if not achou:
+            else:
+        
                 print("Esse livro não foi encontrado na lista.")
     
         while True:
@@ -165,19 +162,19 @@ for i in range(repeticoes):
             else:
                 livro_existe = False
                 for livro in lista:
-                    if livro[0] == codigo_livro:
+                    if livro == codigo_livro:
                         livro_existe = True
                         break
                 
                 aluno_existe = False
                 for aluno in lista_alunos:
-                    if aluno[0] == matricula:
+                    if aluno == matricula:
                         aluno_existe = True
                         break
                 
-                if not livro_existe:
+                if livro_existe == False:
                     print("Não é possível realizar o empréstimo: Livro não cadastrado.")
-                elif not aluno_existe:
+                elif aluno_existe == False:
                     print("Não é possível realizar o empréstimo: Aluno não cadastrado.")
                 else:
                     quantidade_disponivel = input("Quantidade disponível de exemplares: ")
